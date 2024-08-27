@@ -1,0 +1,5 @@
+.matches-page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns in each row */
+    gap: 20px; /* Spacing between tiles */
+}

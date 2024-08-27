@@ -1,0 +1,43 @@
+
+
+/* Individual match tile */
+.match-tile {
+    width: 150px; /* 25% of the container width with spacing */
+    height: 150px;
+    border: 2px solid #ccc; /* Border styling */
+    background-color: #f5f5f5; /* Background color */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px; /* Spacing between rows */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Box shadow for a modern look */
+}
+
+/* Match date styling */
+.match-date {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333; /* Text color */
+}
+
+/* Team icons styling */
+.team-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+    .team-icons img {
+        max-width: 30px; /* Maximum width for icons */
+        max-height: 30px; /* Maximum height for icons */
+    }
+
+/* Match score styling */
+.match-score {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Text color */
+}

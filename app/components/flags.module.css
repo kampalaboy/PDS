@@ -1,0 +1,50 @@
+.flag-picker {
+    text-align: center;
+}
+
+.flag-container {
+    margin: 20px auto;
+    max-width: 200px;
+}
+
+    .flag-container a {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .flag-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.flag-text{
+    display: none;
+}
+
+.flag-image:hover .flag-text {
+    opacity: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.flag-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}

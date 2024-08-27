@@ -1,0 +1,104 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model positions {
+  id              Int  @id @default(autoincrement())
+  position        String 
+  symbol          String
+  playerPosition  playerProfile[]
+}
+
+model players{
+  id             Int   @id @default(autoincrement())
+  playerProfile  playerProfile @relation(fields: [profileId], references: [id] ) 
+  profileId      Int   @unique   
+  seasonGoals    Int?
+  seasonAssists  Int?
+}
+
+model playerProfile{
+  id                    Int  @id @default(autoincrement())
+  name	                String?
+  YOB	                  DateTime?
+  age	                  Int?
+  positions             positions @relation(fields:[position], references:[id])
+  position              Int
+  club	                String?
+  contractExpiry        DateTime?	
+  nationality	          String?
+  internationalCaps     Int?	
+  internationalGoals    Int?	
+  internationalAssists	Int?
+  clubApps	            Int?
+  clubGoals	            Int?
+  clubAssists	          Int?
+  prefFoot	            String?
+  totalGoals 	          Int?
+  totalAssists          Int?
+  player                players?
+  playerAttributes      playerAttributes?
+}
+
+model playerAttributes {
+  id              Int             @id @default(autoincrement())
+  playerProfile   playerProfile   @relation(fields:[profileId], references:[id])
+  profileId       Int             @unique      
+  overallRating   Int?
+
+  firstTouch      Float?
+  dribbling       Float?
+  finishing       Float?
+  cornerTaking    Float?
+  crossing        Float?
+  heading         Float?
+  longShots       Float?
+  marking         Float?
+  passing         Float?
+  penaltyTaking   Float?
+  tackling        Float?
+  technique       Float?
+  
+  aggression      Float?
+  anticipation    Float?
+  composure       Float?
+  concentration   Float?
+  decisionMaking  Float?
+  determination   Float?
+  flair           Float?
+  leadership      Float?
+  offTheBall      Float?
+  positioning     Float?
+  teamwork        Float?
+  vision          Float?
+  workRate        Float?
+  
+  acceleration    Float?
+  agility         Float?
+  balance         Float?
+  jumpingReach    Float?
+  naturalFitness  Float?
+  pace            Float?
+  stamina         Float?
+  strength        Float?
+  height          Float?
+  weight          Float?
+  injuryProne     Float?
+
+}

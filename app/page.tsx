@@ -2,8 +2,69 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+    <main className="flex min-h-screen min-w-full flex-col items-center justify-between p-24">
+      <div className="flex space-x-5 grid-cols-2">
+        <div>
+          <table className="min-w-full text-black bg-white border border-gray-200 shadow-md">
+            <thead className="bg-gray-100 border-b">
+              <tr>
+                <th className="text-left py-2 px-4 border-r">Team</th>
+                <th className="text-center py-2 px-4 border-r">Pld</th>
+                <th className="text-center py-2 px-4 border-r">W</th>
+                <th className="text-center py-2 px-4 border-r">D</th>
+                <th className="text-center py-2 px-4 border-r">L</th>
+                <th className="text-center py-2 px-4">Pts</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b hover:bg-gray-50">
+                <td className="flex items-center py-2 px-4 border-r">
+                  <label
+                    tabIndex={0}
+                    className="btn btn-ghost btn-circle avatar"
+                  >
+                    <div className="w-10 h-10 rounded-full overflow-hidden">
+                      <Image
+                        src="/images/teamicons/SCVilla.svg"
+                        alt="SC Villa"
+                        height={40}
+                        width={40}
+                      />
+                    </div>
+                  </label>
+                  <span className="ml-2">SC Villa</span>
+                </td>
+                <td className="text-center py-2 px-4 border-r">10</td>
+                <td className="text-center py-2 px-4 border-r">10</td>
+                <td className="text-center py-2 px-4 border-r">10</td>
+                <td className="text-center py-2 px-4 border-r">10</td>
+                <td className="text-center py-2 px-4">10</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <section
+          className="w-full bg-center bg-cover text-center p-20 flex flex-col items-center justify-center h-[300px]"
+          style={{ backgroundImage: 'url("/assets/Clouds.jpg")' }}
+        >
+          <div className="bg-black bg-opacity-50 p-10 rounded-lg">
+            <h1 className="text-white text-4xl md:text-6xl font-bold mb-4">
+              Welcome to Our Website
+            </h1>
+            <p className="text-white text-lg md:text-xl mb-8">
+              Discover the latest updates and insights in our top story.
+            </p>
+            <a
+              href="/article/top-story"
+              className="text-white bg-blue-500 hover:bg-blue-600 p-3 rounded-lg mt-4 inline-block font-bold"
+            >
+              Read More
+            </a>
+          </div>
+        </section>
+      </div>
+
+      {/* <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
           <code className="font-mono font-bold">app/page.tsx</code>
@@ -26,18 +87,7 @@ export default function Home() {
             />
           </a>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      </div> */}
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <a
@@ -47,13 +97,13 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
+            News{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
+            Get the latest sports news
           </p>
         </a>
 
@@ -64,13 +114,13 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
+            Videos{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+            Watch the unforgattable sports highlights from the past week!
           </p>
         </a>
 

@@ -1,0 +1,27 @@
+/* players.module.css */
+
+/* Center the table on the page */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* This centers the table vertically on the page */
+  overflow: auto;
+  max-height: 400px;
+}
+
+/* Add borders to the table */
+.table-bordered {
+  border-collapse: collapse;
+  width: 80%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the table horizontally */
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #e2e8f0; /* Border color */
+  padding: 8px; /* Adjust padding as needed */
+  text-align: left;
+}
+
+/* Add more styling as needed */

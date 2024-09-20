@@ -58,6 +58,7 @@ export async function GET(req: any, res: any) {
             injuryProne: true,
             playerProfile: true,
           },
+        
         },
       },
     });
